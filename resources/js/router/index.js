@@ -5,6 +5,7 @@ import About from '../pages/About';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
+import DataBuku from '../pages/DataBuku';
 
 import Books from '../components/Books';
 import AddBook from '../components/AddBook';
@@ -35,6 +36,11 @@ export const routes = [
         name: 'dashboard',
         path: '/dashboard',
         component: Dashboard
+    },
+    {
+        name: 'databuku',
+        path: '/databuku',
+        component: DataBuku
     },
     {
         name: 'books',

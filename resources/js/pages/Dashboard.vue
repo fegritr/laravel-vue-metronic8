@@ -2800,11 +2800,14 @@ export default {
             this.name = window.Laravel.user.name
         }
     },
-    beforeRouteEnter(to, from, next) {
-        if (!window.Laravel.isLoggedin) {
-            window.location.href = "/";
-        }
-        next();
-    }
+	mounted(){
+		this.$root.menuActive = 'Dashboard'
+	}
+    // beforeRouteEnter(to, from, next) {
+    //     if (!window.Laravel.isLoggedin) {
+    //         window.location.href = "/";
+    //     }
+    //     next();
+    // }
 }
 </script>

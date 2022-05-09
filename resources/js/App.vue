@@ -9,7 +9,7 @@
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html">
+						<a href="/">
 							<img alt="Logo" src="assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
 						</a>
 						<!--end::Logo-->
@@ -52,19 +52,27 @@
 									</span>
 									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div class="menu-item">
-                                            <router-link to="/dashboard" class="menu-link active">
+                                            <router-link to="/dashboard" class="menu-link " :class="{active: (menuActive=='Dashboard')}">
                                                 <span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">Dashboards</span>
+												<span class="menu-title" v-on:click="setMenuActive('Dashboard')">Dashboards</span>
                                             </router-link>
 										</div>
 										<div class="menu-item">
-                                            <router-link to="/register" class="menu-link">
+                                            <router-link to="/register" class="menu-link"  :class="{active: (menuActive=='Register')}">
                                                 <span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">Register</span>
+												<span class="menu-title"  v-on:click="setMenuActive('Register')">Register</span>
+                                            </router-link>
+										</div>
+										<div class="menu-item">
+                                            <router-link to="/databuku" class="menu-link"  :class="{active: (menuActive=='Data Buku')}">
+                                                <span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"  v-on:click="setMenuActive('Data Buku')">Data Buku</span>
                                             </router-link>
 										</div>
 									</div>
@@ -204,24 +212,6 @@
 						<!--end::Aside Menu-->
 					</div>
 					<!--end::Aside menu-->
-					<!--begin::Footer-->
-					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-						<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
-							<span class="btn-label">Docs &amp; Components</span>
-							<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-							<span class="svg-icon btn-icon svg-icon-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM12.5 18C12.5 17.4 12.6 17.5 12 17.5H8.5C7.9 17.5 8 17.4 8 18C8 18.6 7.9 18.5 8.5 18.5L12 18C12.6 18 12.5 18.6 12.5 18ZM16.5 13C16.5 12.4 16.6 12.5 16 12.5H8.5C7.9 12.5 8 12.4 8 13C8 13.6 7.9 13.5 8.5 13.5H15.5C16.1 13.5 16.5 13.6 16.5 13ZM12.5 8C12.5 7.4 12.6 7.5 12 7.5H8C7.4 7.5 7.5 7.4 7.5 8C7.5 8.6 7.4 8.5 8 8.5H12C12.6 8.5 12.5 8.6 12.5 8Z" fill="currentColor" />
-									<rect x="7" y="17" width="6" height="2" rx="1" fill="currentColor" />
-									<rect x="7" y="12" width="10" height="2" rx="1" fill="currentColor" />
-									<rect x="7" y="7" width="6" height="2" rx="1" fill="currentColor" />
-									<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor" />
-								</svg>
-							</span>
-							<!--end::Svg Icon-->
-						</a>
-					</div>
-					<!--end::Footer-->
 				</div>
 				<!--end::Aside-->
 				<!--begin::Wrapper-->
@@ -246,7 +236,7 @@
 							<!--end::Aside mobile toggle-->
 							<!--begin::Mobile logo-->
 							<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-								<a href="../../demo1/dist/index.html" class="d-lg-none">
+								<a href="/" class="d-lg-none">
 									<img alt="Logo" src="assets/media/logos/logo-2.svg" class="h-30px" />
 								</a>
 							</div>
@@ -265,6 +255,7 @@
 										<div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
 											<img src="assets/media/avatars/300-1.jpg" alt="user" />
 										</div>
+										<div class="mr-4">fegrit</div>
 										<!--begin::User account menu-->
 										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
 											<!--begin::Menu item-->
@@ -274,6 +265,7 @@
 													<div class="symbol symbol-50px me-5">
 														<img alt="Logo" src="assets/media/avatars/300-1.jpg" />
 													</div>
+													
 													<!--end::Avatar-->
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
@@ -284,6 +276,7 @@
 													<!--end::Username-->
 												</div>
 											</div>
+											
 											<!--end::Menu item-->
 											<!--begin::Menu separator-->
 											<div class="separator my-2"></div>
@@ -427,7 +420,7 @@
 											<div class="menu-item px-5">
 												<div class="menu-content px-5">
 													<label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_user_menu_dark_mode_toggle">
-														<input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_user_menu_dark_mode_toggle" data-kt-url="../../demo1/dist/index.html" />
+														<input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_user_menu_dark_mode_toggle" data-kt-url="/" />
 														<span class="pulse-ring ms-n1"></span>
 														<span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
 													</label>
@@ -538,7 +531,7 @@ export default {
 				minutes: '',
 				seconds: '',
 			},
-            
+			menuActive:'',
         }
     },
     created() {
@@ -547,6 +540,9 @@ export default {
             this.login = window.Laravel.user
         }
     },
+	mounted(){
+	},	
+
     methods: {
         getLogoPhoto() {
             return "/img/logo.png";
@@ -573,6 +569,9 @@ export default {
 				minutes: date.getMinutes(),
 				seconds: date.getSeconds(),
 			};
+		},
+		setMenuActive(menu){
+			this.menuActive = menu;
 		}
     },
 	beforeMount() {

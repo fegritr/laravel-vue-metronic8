@@ -61,7 +61,7 @@ export default {
         }
     },
     mounted(){
-		this.$root.menuActive = 'Register'
+		this.$root.menuActive = 'Data Buku'
 	},
     methods: {
         handleSubmit(e) {
