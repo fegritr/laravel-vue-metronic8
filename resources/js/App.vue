@@ -75,6 +75,14 @@
 												<span class="menu-title"  v-on:click="setMenuActive('Data Buku')">Data Buku</span>
                                             </router-link>
 										</div>
+										<div class="menu-item">
+                                            <router-link to="/login" class="menu-link"  :class="{active: (menuActive=='Data Buku')}">
+                                                <span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title"  v-on:click="setMenuActive('Data Buku')">Logout</span>
+                                            </router-link>
+										</div>
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -455,10 +463,8 @@
 					</div>
 					<!--end::Header-->
 					<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						<!--begin::Toolbar-->
+					<div class="content d-flex flex-column flex-column-fluid p-10" id="kt_content">
                         <router-view/>
-						
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
@@ -572,6 +578,9 @@ export default {
 		},
 		setMenuActive(menu){
 			this.menuActive = menu;
+		},
+		logout(){
+
 		}
     },
 	beforeMount() {

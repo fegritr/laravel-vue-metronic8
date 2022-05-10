@@ -25,6 +25,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "devextreme": "21.2.7",
+        "devextreme-vue": "21.2.7",
         "vue-router": "^4.0.13"
     }
 }
