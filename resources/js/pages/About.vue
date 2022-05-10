@@ -1,6 +1,6 @@
 <template>
     <div>
-        About us
+        About u
     </div>
 </template>
 
@@ -8,4 +8,4 @@
 export default {
     name: "About"
 }
-</script>
+</script> 

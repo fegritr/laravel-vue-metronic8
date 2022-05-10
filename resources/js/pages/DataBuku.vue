@@ -1,5 +1,6 @@
 <template>
-<div><a href="#" class="btn btn-primary">Primary</a></div>
+ <div class="content d-flex flex-column flex-column-fluid card p-5" id="kt_content">
+<div ><a href="#" class="btn btn-primary mb-5">Primary</a></div>
 <div>
   <DxDataGrid
     :data-source="dataSource"
@@ -37,6 +38,7 @@
       :allowed-page-sizes="[8, 12, 20]"
     />
   </DxDataGrid>
+  </div>
   </div>
 </template>
 <script>
