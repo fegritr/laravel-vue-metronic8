@@ -27,6 +27,8 @@
     "dependencies": {
         "devextreme": "21.2.7",
         "devextreme-vue": "21.2.7",
+        "moment": "^2.29.3",
+        "vue-moment": "^4.1.0",
         "vue-router": "^4.0.13"
     }
 }
