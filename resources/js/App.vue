@@ -513,7 +513,7 @@
 		</div>
 		<!--end::Scrolltop-->
     </div>
-    <div v-else id="kt_body" class="bg-body">
+    <div v-else id="kt_body" class="bg-body p-30">
 		<PLogin></PLogin>
     </div>
 </template>
@@ -530,7 +530,7 @@ export default {
     data() {
         return {
             login: [],
-            isLoggedIn: true,
+            isLoggedIn: false,
             active_el:0,
 			dateTime: {
 				hours: '',
