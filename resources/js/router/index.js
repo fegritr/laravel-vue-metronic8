@@ -7,9 +7,8 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import DataBuku from '../pages/DataBuku';
 
-import Books from '../components/Books';
-import AddBook from '../components/AddBook';
-import EditBook from '../components/EditBook';
+import Books from '../pages/Books/Books'
+import Category from '../pages/Category/Category'
 
 export const routes = [
     {
@@ -48,15 +47,12 @@ export const routes = [
         component: Books
     },
     {
-        name: 'addbook',
-        path: '/books/add',
-        component: AddBook
+        name: 'category',
+        path: '/category',
+        component: Category
     },
-    {
-        name: 'editbook',
-        path: '/books/edit/:id',
-        component: EditBook
-    },
+
+
 ];
 
 const router = createRouter({

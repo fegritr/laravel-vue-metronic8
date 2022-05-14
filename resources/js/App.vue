@@ -223,32 +223,91 @@
                       </span>
                       <!--end::Svg Icon-->
                     </span>
-                    <span class="menu-title">Reporting</span>
+                    <span class="menu-title">Items</span>
                     <span class="menu-arrow"></span>
                   </span>
                   <div class="menu-sub menu-sub-accordion">
                     <div class="menu-item">
-                      <router-link to="/listreporting" class="menu-link">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">List</span>
+                        <span class="menu-title">All Items</span>
                       </router-link>
                     </div>
                     <div class="menu-item">
-                      <router-link to="/reviewreporting" class="menu-link">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">Review</span>
+                        <span class="menu-title">Categories</span>
                       </router-link>
                     </div>
                     <div class="menu-item">
-                      <router-link to="/generatedreporting" class="menu-link">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">Generated Report</span>
+                        <span class="menu-title">Modifiers</span>
+                      </router-link>
+                    </div>
+                    <div class="menu-item">
+                      <router-link to="/" class="menu-link">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Discounts</span>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
+                  <span class="menu-link">
+                    <span class="menu-icon">
+                      <!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
+                      <span class="svg-icon svg-icon-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            opacity="0.3"
+                            d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <!--end::Svg Icon-->
+                    </span>
+                    <span class="menu-title">Book Testing</span>
+                    <span class="menu-arrow"></span>
+                  </span>
+                  <div class="menu-sub menu-sub-accordion">
+                    <div class="menu-item">
+                      <router-link to="/books" class="menu-link">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Books</span>
+                      </router-link>
+                    </div>
+                    <div class="menu-item">
+                      <router-link to="/category" class="menu-link">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Category</span>
                       </router-link>
                     </div>
                   </div>
@@ -287,7 +346,50 @@
                   </span>
                   <div class="menu-sub menu-sub-accordion">
                     <div class="menu-item">
-                      <router-link to="/departemen" class="menu-link">
+                      <router-link to="/" class="menu-link">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Departemen</span>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
+                  <span class="menu-link">
+                    <span class="menu-icon">
+                      <!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
+                      <span class="svg-icon svg-icon-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            opacity="0.3"
+                            d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <!--end::Svg Icon-->
+                    </span>
+                    <span class="menu-title">Settings</span>
+                    <span class="menu-arrow"></span>
+                  </span>
+                  <div class="menu-sub menu-sub-accordion">
+                    <div class="menu-item">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
@@ -326,7 +428,7 @@
                   </span>
                   <div class="menu-sub menu-sub-accordion">
                     <div class="menu-item">
-                      <router-link to="/users" class="menu-link">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
@@ -334,7 +436,7 @@
                       </router-link>
                     </div>
                     <div class="menu-item">
-                      <router-link to="/userkategori" class="menu-link">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
@@ -342,7 +444,7 @@
                       </router-link>
                     </div>
                     <div class="menu-item">
-                      <router-link to="/role" class="menu-link">
+                      <router-link to="/" class="menu-link">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
@@ -350,46 +452,6 @@
                       </router-link>
                     </div>
                   </div>
-                </div>
-                <div class="menu-item">
-                  <router-link to="/help" class="menu-link">
-                    <span class="menu-icon">
-                      <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
-                      <span class="svg-icon svg-icon-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                        >
-                          <path
-                            opacity="0.3"
-                            d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
-                            fill="currentColor"
-                          />
-                          <rect
-                            x="6"
-                            y="12"
-                            width="7"
-                            height="2"
-                            rx="1"
-                            fill="currentColor"
-                          />
-                          <rect
-                            x="6"
-                            y="7"
-                            width="12"
-                            height="2"
-                            rx="1"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <!--end::Svg Icon-->
-                    </span>
-                    <span class="menu-title">Help</span>
-                  </router-link>
                 </div>
               </div>
               <!--end::Menu-->
@@ -765,7 +827,7 @@ export default {
         seconds: "",
       },
       menuActive: "",
-      timeNow: moment().format("MMMM Do YYYY, HH:mm"),
+      timeNow: moment().format("DD MMM YYYY, HH:mm"),
     };
   },
   created() {
@@ -774,7 +836,7 @@ export default {
     }
     setInterval(
       function () {
-        this.timeNow = moment().format("MMMM Do YYYY, HH:mm");
+        this.timeNow = moment().format("DD MMM YYYY, HH:mm");
       }.bind(this),
       1000
     );
@@ -831,6 +893,7 @@ export default {
     },
     setMenuActive(menu) {
       this.menuActive = menu;
+      console.log(menu);
     },
     logout() {
       this.$axios.get("/sanctum/csrf-cookie").then((response) => {

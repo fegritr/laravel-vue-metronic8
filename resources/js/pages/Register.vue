@@ -1,97 +1,80 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-
-                <div class="alert alert-danger" role="alert" v-if="error !== null">
-                    {{ error }}
-                </div>
-
-                <div class="card card-default">
-                    <div class="card-header">Register</div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group row">
-                                <label for="name" class="col-sm-4 col-form-label text-md-right">Name</label>
-                                <div class="col-md-6">
-                                    <input id="name" type="email" class="form-control" v-model="name" required
-                                           autofocus autocomplete="off">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" v-model="email" required
-                                           autofocus autocomplete="off">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" v-model="password"
-                                           required autocomplete="off">
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary" @click="handleSubmit">
-                                        Register
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="content d-flex flex-column flex-column-fluid card p-5" id="kt_content">
+    <div><a href="#" class="btn btn-primary mb-5 float-end">Primary</a></div>
+    <div>
+      <DxDataGrid
+        :data-source="dataSource"
+        :show-borders="true"
+        :remote-operations="true"
+      >
+        <DxColumn data-field="OrderNumber" data-type="number" />
+        <DxColumn data-field="OrderDate" data-type="date" />
+        <DxColumn data-field="StoreCity" data-type="string" />
+        <DxColumn data-field="StoreState" data-type="string" />
+        <DxColumn data-field="Employee" data-type="string" />
+        <DxColumn data-field="SaleAmount" data-type="number" format="currency" />
+        <DxPaging :page-size="12" />
+        <DxPager :show-page-size-selector="true" :allowed-page-sizes="[8, 12, 20]" />
+      </DxDataGrid>
     </div>
+  </div>
 </template>
-
 <script>
-export default {
-    data() {
-        return {
-            name: "",
-            email: "",
-            password: "",
-            error: null
-        }
-    },
-    mounted(){
-		this.$root.menuActive = 'Register'
-	},
-    methods: {
-        handleSubmit(e) {
-            e.preventDefault()
-            if (this.password.length > 0) {
-                axios.get('/sanctum/csrf-cookie').then(response => {
-                    axios.post('api/register', {
-                        name: this.name,
-                        email: this.email,
-                        password: this.password
-                    })
-                        .then(response => {
-                            if (response.data.success) {
-                                window.location.href = "/login"
-                            } else {
-                                this.error = response.data.message
-                            }
-                        })
-                        .catch(function (error) {
-                            console.error(error);
-                        });
-                })
-            }
-        }
-    },
-    beforeRouteEnter(to, from, next) {
-        if (window.Laravel.isLoggedin) {
-            return next('dashboard');
-        }
-        next();
-    }
+import { DxDataGrid, DxColumn, DxPaging, DxPager } from "devextreme-vue/data-grid";
+import CustomStore from "devextreme/data/custom_store";
+// import 'whatwg-fetch';
+
+function isNotEmpty(value) {
+  return value !== undefined && value !== null && value !== "";
 }
+
+const store = new CustomStore({
+  key: "OrderNumber",
+  load(loadOptions) {
+    let params = "?";
+    [
+      "skip",
+      "take",
+      "requireTotalCount",
+      "requireGroupCount",
+      "sort",
+      "filter",
+      "totalSummary",
+      "group",
+      "groupSummary",
+    ].forEach((i) => {
+      if (i in loadOptions && isNotEmpty(loadOptions[i])) {
+        params += `${i}=${JSON.stringify(loadOptions[i])}&`;
+      }
+    });
+    params = params.slice(0, -1);
+    return fetch(
+      `https://js.devexpress.com/Demos/WidgetsGalleryDataService/api/orders${params}`
+    )
+      .then((response) => response.json())
+      .then((data) => ({
+        data: data.data,
+        totalCount: data.totalCount,
+        summary: data.summary,
+        groupCount: data.groupCount,
+      }))
+      .catch(() => {
+        throw new Error("Data Loading Error");
+      });
+  },
+});
+
+export default {
+  components: {
+    DxDataGrid,
+    DxColumn,
+    DxPaging,
+    DxPager,
+  },
+  data() {
+    return {
+      dataSource: store,
+    };
+  },
+};
 </script>
